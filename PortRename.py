@@ -56,8 +56,8 @@ master_dictionary = {}
 master_list = [] # just trying different methods.
 i = 1 # Section Counter
 while i <= section:
-    print("Section " + i)
-    is_lag = str.lower(input("Is this section of ports inside of a LAG? y/n: "))
+    print("Section " + str(i))
+    is_lag = input("Is this section of ports inside of a LAG? y/n: ")
     if is_lag == 'y':
         command_list = LaggedPorts()
         master_list.append(command_list)
@@ -71,4 +71,8 @@ while i <= section:
     else:
         print("Error, Try Again")
 
-print(master_list)
+for thing in master_list:
+    print(thing)
+
+
+
