@@ -30,7 +30,8 @@ def LaggedPorts():
             output.append("port-name " + rename + ' e ' + card_number + '/' + UserInput)
         else:
             return output
-        return output
+    return output
+
 # Non Lagged Section
 def NonLagged():
     rename = input("Please enter the new name for these ports: ")
@@ -45,7 +46,7 @@ def NonLagged():
             output.append("port-name " + rename)
         else:
             return output
-        return output
+    return output
 
 
 # Script Structure
@@ -60,19 +61,21 @@ while i <= section:
     is_lag = input("Is this section of ports inside of a LAG? y/n: ")
     if is_lag == 'y':
         command_list = LaggedPorts()
-        master_list.append(command_list)
+        for entry in command_list:
+            master_list.append(entry)
         print("This section is now complete")
         i = i + 1
     elif is_lag == 'n':
         command_list = NonLagged()
-        master_list.append(command_list)
+        for entry in command_list:
+            master_list.append(entry)
         i = i + 1
         print("This section is now complete")
     else:
         print("Error, Try Again")
 
+print("config t")
 for thing in master_list:
     print(thing)
-
-
-
+print("exit")
+print("exit")
