@@ -53,7 +53,7 @@ def NonLagged():
 # Our lists of strings from LaggedPorts() and NonLagged() will be stored in a dictionary, with a key based on
 # Section Number
 
-master_dictionary = {}
+master_dictionary = {} #Not In Use
 master_list = [] # just trying different methods.
 i = 1 # Section Counter
 while i <= section:
